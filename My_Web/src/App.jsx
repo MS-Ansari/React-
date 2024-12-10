@@ -57,7 +57,6 @@ const toggleMode =()=>
 <div className="container my-3">
 <Text showAlert={showAlert} heading="Enter the text to Analyze below"  mode={mode}/>
 
-    {/* <Aboutus/> */}
 
 </div>
 
