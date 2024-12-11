@@ -3,3 +3,73 @@
 border: 2px solid darkslategrey;
 
 }
+/* General styles for contact page */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .contact-form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Dark Mode Styles */
+  .dark-mode {
+    background-color: #061731;
+    color: white;
+  }
+  
+  .dark-mode .contact-form input,
+  .dark-mode .contact-form textarea {
+    background-color: #333;
+    color: white;
+  }
+  
+  .dark-mode .contact-form button {
+    background-color: #444;
+  }
+  
+  .dark-mode .contact-form button:hover {
+    background-color: #555;
+  }
+  

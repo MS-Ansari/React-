@@ -33,7 +33,7 @@ else
 
   return (
     <div>
-      <div className="container" style={myStyle}>
+      <div className="container my-3" style={myStyle}>
       <h1>About Us</h1>
 
       <div className="accordion" id="accordionExample">
@@ -74,7 +74,7 @@ else
     </div>
   </div>
 </div>
-<div className="container my-3">
+<div className="container mt-5">
     <button onClick={toggleStyle} className='btn btn-primary'>{btnText}</button>
 </div>
 

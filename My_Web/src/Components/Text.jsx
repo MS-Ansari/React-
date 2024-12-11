@@ -45,7 +45,7 @@
 
         return (
       <>
-          <div className='container' style={{color: props.mode==='dark'?'white':'#061731'}}>
+          <div className='container mt-3' style={{color: props.mode==='dark'?'white':'#061731'}}>
           <h1>{props.heading}</h1>
       <div className="mb-3">
       <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='dark'?'grey':'white' ,color :props.mode==='dark'?'white':'#061731'}} onChange={handleOnChange} id="myBox" rows="8">  </textarea>

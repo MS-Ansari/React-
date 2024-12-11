@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './App.css';
 import Aboutus from './Components/Aboutus';
-// Uncomment these imports if these components are needed
 import Navbar from './Components/Navbar';
 import Text from './Components/Text';
 import Alerts from './Components/Alerts';
+import Contact from './Components/Contact';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -37,23 +38,20 @@ function App() {
 
   return (
     <>
-      {/* Uncomment Navbar and Alerts if needed */}
-      {/* <Navbar title="TEdits" About="About us" mode={mode} toggleMode={toggleMode} />
-      <Alerts alert={alert} /> */}
 
-      <div className="container my-3">
-        {/* Uncomment Text component if needed */}
-        {/* <Text showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} /> */}
+      <div className="container ">
       </div>
 
       <Router>
-      <Navbar title="TEdits" About="About us" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="TEdits" About="About us" Contact="Contact" mode={mode} toggleMode={toggleMode} />
       <Alerts alert={alert} />
 
         <Routes>
           {/* Define the route for the Aboutus component */}
           <Route path="/" element={<Text showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
           <Route path="/About" element={<Aboutus />} />
+          <Route path="/Home" element={<Text showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
+          <Route path="/Contact" element={<Contact mode={mode}  />}/>
         </Routes>
       </Router>
     </>
