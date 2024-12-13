@@ -8,33 +8,14 @@ const[myStyle , setMyStyle]=useState(
     backgroundColor:'white'
 })
 
-const[btnText , setBtnText] =useState("Enabla dark mode")
 
-const toggleStyle =()=>
-{
-    if(myStyle.color=='black')
-    {
-      setMyStyle({
-      color : 'white',
-      backgroundColor : 'black'
-    })
-    setBtnText("Enable light mode")
-}
-else
-{
-  setMyStyle({
-    color:'black',
-    backgroundColor:'white'
-  })
-  setBtnText("Enable dark mode");
-}
-}
+
    
 
   return (
     <div>
       <div className="container my-3" style={myStyle}>
-      <h1>About Us</h1>
+      <h1>About ME</h1>
 
       <div className="accordion" id="accordionExample">
   <div className="accordion-item" style={myStyle}>
@@ -74,9 +55,7 @@ else
     </div>
   </div>
 </div>
-<div className="container mt-5">
-    <button onClick={toggleStyle} className='btn btn-primary'>{btnText}</button>
-</div>
+
 
 </div>
 

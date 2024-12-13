@@ -20,7 +20,6 @@ const Contact = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission
     alert('Your message has been sent!');
   };
 

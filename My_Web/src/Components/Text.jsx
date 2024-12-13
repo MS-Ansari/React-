@@ -37,6 +37,7 @@
           var text = document.getElementById("myBox");
           text.select();
           navigator.clipboard.writeText(text.value);
+          document.getSelection().removeAllRanges();
           props.showAlert("Copy All Texts.","success");
 
         
@@ -48,21 +49,21 @@
           <div className='container mt-3' style={{color: props.mode==='dark'?'white':'#061731'}}>
           <h1>{props.heading}</h1>
       <div className="mb-3">
-      <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='dark'?'grey':'white' ,color :props.mode==='dark'?'white':'#061731'}} onChange={handleOnChange} id="myBox" rows="8">  </textarea>
+      <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='dark'?'rgb(51, 51, 51)':'white' ,color :props.mode==='dark'?'white':'#061731'}} onChange={handleOnChange} id="myBox" rows="8">  </textarea>
       </div>
-      <button className="btn btn-primary mx-2"onClick={handleUpClick}>convert to uppercase</button>
-      <button className="btn btn-primary mx-2"onClick={handleLoClick}>convert to lowercase</button>
-      <button className="btn btn-danger mx-2"onClick={removeText}>remove all text</button>
-      <button className="btn btn-primary mx-2"onClick={handleExtraSpace}>Remove extra spce</button>
-      <button className="btn btn-primary mx-2"onClick={handleCopy}>Copy Text </button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1"onClick={handleUpClick}>convert to uppercase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1"onClick={handleLoClick}>convert to lowercase</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-2 my-1"onClick={removeText}>remove all text</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1"onClick={handleExtraSpace}>Remove extra space</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-1"onClick={handleCopy}>Copy Text </button>
 
 
 
       </div>
       <div className="class container my-3" style={{color:props.mode==='dark'?'white':'#061731'}}>
       <h2>Your Text Summary</h2>
-      <p>{text.split(" ").length} words and {text.length} characters</p>
-      <p>{0.008 * text.split(" ").length} Minutes to read</p>
+      <p>{text.split(" ").filter((element)=>{return element.length !== 0}).length} words and {text.length} characters</p>
+      <p>{0.008 * text.split(" ").filter((element)=>{return element.length !== 0}).length} Minutes to read</p>
       <h2>Preview</h2>
       <p>{text.length>0?text:"Enter something in the above textBox to preview."}</p>
       </div>
