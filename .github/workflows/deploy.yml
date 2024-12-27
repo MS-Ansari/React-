@@ -1,0 +1,38 @@
+name: Deploy React App
+
+on:
+  push:
+    branches:
+      - main  # Change this if your main branch is named differently.
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: <your-ec2-public-ip>
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /var/www/myapp/yourrepository
+            git pull origin main
+            npm install
+            npm run build
+            sudo systemctl reload nginx
