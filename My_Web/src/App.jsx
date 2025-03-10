@@ -48,6 +48,7 @@ function App() {
 
         <Routes>
           {/* Define the route for the Aboutus component */}
+          <h3>Hello, Shoeb</h3>
           <Route path="/" element={<Text showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
           <Route path="/About" element={<Aboutus />} />
           <Route path="/Home" element={<Text showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
