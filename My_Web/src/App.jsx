@@ -58,7 +58,7 @@ function App() {
             element={
               <Text
                 showAlert={showAlert}
-                heading="Enter the text to analyze below"
+                heading="Enter the text to TAJ WALE"
                 mode={mode}
               />
             }
