@@ -4,6 +4,7 @@
       const Text = (props) => {
         const handleUpClick= ()=>{
           // console.log("Upper Case was clicked"+text);
+          // console.log("Upper Case was clicked"+text);
           let newText=text.toUpperCase();
           setText(newText);
           props.showAlert("Converted to upper case","success");
