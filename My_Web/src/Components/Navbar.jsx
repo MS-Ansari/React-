@@ -39,6 +39,7 @@ Navbar.propTypes = {
   title: PropTypes.string.isRequired,
   About: PropTypes.string.isRequired,  // Adjusted 'About' to match the correct type
 };
+// Adjusted 'About' to match the correct type
 
 // Specifies the default values for props: (h${title $}*3)
 Navbar.defaultProps = {
