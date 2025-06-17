@@ -47,6 +47,11 @@ export default function Navbar({
                 {About}
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/ResumeBuilder">
+                ResumeBuilder
+              </Link>
+            </li>
           </ul>
           <div
             className={`form-check form-switch text-${

@@ -1,42 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+// import "./index.css"; // Link to external CSS
 
-const Contact = (props) => {
-  const { mode } = props; // Destructure mode from props
-
-  // State for form inputs
+const Contact = ({ mode }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Your message has been sent!');
+    alert("Your message has been sent!");
   };
 
   return (
-    <div
-      className={`contact-container ${mode === 'dark' ? 'dark-mode' : ''}`}
-      style={{
-        padding: '30px',
-        fontFamily: 'Arial, sans-serif',
-        backgroundColor: mode === 'dark' ? '#061731' : '#fff',
-        color: mode === 'dark' ? 'white' : '#061731',
-        borderRadius: '8px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      }}
-    >
-      <h2  style={{ textAlign: 'center', marginBottom: '20px' }}>Contact Us</h2>
-
+    <div className={`contact-container ${mode === "dark" ? "dark-mode" : ""}`}>
+      <h2>Contact Us</h2>
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -47,15 +34,6 @@ const Contact = (props) => {
             value={formData.name}
             onChange={handleInputChange}
             required
-            style={{
-              padding: '10px',
-              width: '100%',
-              margin: '10px 0',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              backgroundColor: mode === 'dark' ? '#333' : '#fff',
-              color: mode === 'dark' ? 'white' : '#061731',
-            }}
           />
         </div>
 
@@ -68,15 +46,6 @@ const Contact = (props) => {
             value={formData.email}
             onChange={handleInputChange}
             required
-            style={{
-              padding: '10px',
-              width: '100%',
-              margin: '10px 0',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              backgroundColor: mode === 'dark' ? '#333' : '#fff',
-              color: mode === 'dark' ? 'white' : '#061731',
-            }}
           />
         </div>
 
@@ -85,39 +54,13 @@ const Contact = (props) => {
           <textarea
             id="message"
             name="message"
+            rows="5"
             value={formData.message}
             onChange={handleInputChange}
-            rows="5"
             required
-            style={{
-              padding: '10px',
-              width: '100%',
-              margin: '10px 0',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              backgroundColor: mode === 'dark' ? '#333' : '#fff',
-              color: mode === 'dark' ? 'white' : '#061731',
-            }}
           />
         </div>
-
-        <button
-          type="submit"
-          style={{
-            backgroundColor: mode === 'dark' ? '#444' : '#4CAF50',
-            color: 'white',
-            padding: '12px 20px',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            display: 'block',
-            width: '100%',
-            fontSize: '16px',
-            marginTop: '20px',
-          }}
-        >
-          Send Message
-        </button>
+        <button type="submit">Send Message</button>
       </form>
     </div>
   );
