@@ -6,7 +6,7 @@ import Text from "./Components/Text";
 import Alerts from "./Components/Alerts";
 import Contact from "./Components/Contact";
 import Pdf from "./Components/Pdf";
-import ResumeBuilder from "./Components/ResumeBuilder";
+// import ResumeBuilder from "./Components/ResumeBuilder";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -51,11 +51,12 @@ function App() {
         />
         <Alerts alert={alert} />
 
-        <div className="container"></div>
+       
         <Routes>
           {/* Define the route for the Aboutus component */}
           <Route path="/" element={<Text showAlert={showAlert} heading="Enter the text to TAJ " mode={mode} />} />
           <Route path="/About" element={<Aboutus />} />
+          <Route path="/handleConvert" element={<Pdf mode={mode} />} />
           <Route path="/Home" element={<Text showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
           <Route path="/Contact" element={<Contact mode={mode}  />}/>
         </Routes>
